@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Study Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card result-page-card">
+        <div id="resultCaptureArea">
+          <div class="card__header">
+            <p class="eyebrow">Your Personalized Result</p>
+            <h1>Your study plan</h1>
+            <p class="subtitle">
+              Explore each plan on a month-by-month timeline and adjust the
+              schedule as needed.
+            </p>
+          </div>
+
+          <div class="result-toolbar">
+            <label class="timeline-field result-toolbar__field" for="endMonthInput">
+              <span>Timeline end month</span>
+              <input id="endMonthInput" type="month" />
+            </label>
+          </div>
+
+          <div id="resultContainer" class="result-stack"></div>
+        </div>
+
+        <div class="result-actions">
+          <button id="screenshotButton" type="button" class="button">
+            Take Screenshot
+          </button>
+          <p id="screenshotMessage" class="success" aria-live="polite"></p>
+        </div>
+
+        <a href="index.html" class="back-link">Back</a>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="result.js"></script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <div class="card__header">
+          <p class="eyebrow">Personalized Preparation Form</p>
+          <h1>Generate your study plan</h1>
+          <p class="subtitle">
+            Fill in your details and choose the exams you are targeting.
+          </p>
+        </div>
+
+        <form id="plan-form" class="form" novalidate>
+          <label class="field">
+            <span>Your Name</span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Email ID</span>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email address"
+            />
+          </label>
+
+          <div class="field">
+            <span>WhatsApp Number</span>
+            <div class="phone-group">
+              <label class="phone-group__code" for="countryCode">
+                <span class="sr-only">Country code</span>
+                <select id="countryCode" name="countryCode" aria-label="Country code">
+                  <option value="+91" selected>+91 (India)</option>
+                  <option value="+1">+1 (USA)</option>
+                  <option value="+44">+44 (UK)</option>
+                  <option value="+61">+61 (Australia)</option>
+                </select>
+              </label>
+
+              <label class="phone-group__number" for="whatsappNumber">
+                <span class="sr-only">Phone number</span>
+                <input
+                  id="whatsappNumber"
+                  type="tel"
+                  name="whatsapp"
+                  placeholder="Enter phone number"
+                  inputmode="numeric"
+                  maxlength="10"
+                  required
+                />
+              </label>
+            </div>
+            <input id="fullWhatsappNumber" type="hidden" name="fullWhatsappNumber" />
+            <p id="whatsapp-error" class="error" aria-live="polite"></p>
+          </div>
+
+          <fieldset class="field-group">
+            <legend>Target Exam</legend>
+            <p class="helper">Select at least one option.</p>
+
+            <label class="checkbox">
+              <input type="checkbox" name="targetExam" value="inicet_may" />
+              <span>INICET May 2026</span>
+            </label>
+
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                name="targetExam"
+                value="neet_pg"
+              />
+              <span>NEET PG August 2026</span>
+            </label>
+
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                name="targetExam"
+                value="inicet_nov"
+              />
+              <span>INICET November 2026</span>
+            </label>
+
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                name="targetExam"
+                value="next_year"
+              />
+              <span>Next year or later</span>
+            </label>
+
+            <p id="exam-error" class="error" aria-live="polite"></p>
+          </fieldset>
+
+          <button type="submit" class="button">Generate My Plan</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
